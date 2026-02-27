@@ -129,11 +129,15 @@ conform to the server request parsing rules described in {{sec-server-request}}.
 
 The choice of when a client implementation should attempt to coalesce
 queries for multiple QTYPEs using this method is implementation specific
-and not discussed further herein.
+and not discussed further herein. However, careful considerations should
+be taken into account when coalescing queries on behalf of an application
+if such a feature is not explicitly requested by the application. How
+an application interacts with an underlying name resolution library is
+internal to the implementation and is thus out of scope.
 
 ## Server Request Parsing {#sec-server-request}
 
-In addition to the error cases discussion in Section 7 of {{RFC6891}},
+In addition to the error cases discussion in {{Section 7 of RFC6891}},
 the server MUST return a FORMERR response if the server receives:
 
 * An MQTYPE-Query option in any inbound DNS message with an
