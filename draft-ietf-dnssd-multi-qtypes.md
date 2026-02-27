@@ -162,10 +162,10 @@ in a query.
 
 ## Server Response Generation
 
-A conforming server that receives an MQTYPE-Query option in a query MUST
+A conforming server that receives a valid query with an MQTYPE-Query option in  MUST
 return an MQTYPE-Response option in its response, even if that response
 is truncated (TC=1).  This is necessary to indicate that the server does
-support this extension.
+support this extension. Refer to {{sec-server-request}} for invalid queries.
 
 The server MUST first start constructing a response for the primary
 (QNAME, QCLASS, QTYPE) tuple specified in the Question section per
